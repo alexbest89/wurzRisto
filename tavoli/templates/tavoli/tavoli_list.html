@@ -1,0 +1,23 @@
+{% extends "template_generico.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+    <div class="col-lg-6">
+    <h1>Lista Tavoli disponibili:</h1>
+    {% if tavoli_list %}
+    <ul class="list-group">
+        {% for tav in tavoli_list %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="{% url 'detailTav' pk=tav.pk %}"> {{tav.nome_Tavolo}} </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>Non ci sono tavoli disponibili</p>
+    {% endif %}
+    </div>
+    </div>
+</div>
+
+{% endblock %}

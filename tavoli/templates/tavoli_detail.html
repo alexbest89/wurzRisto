@@ -1,0 +1,88 @@
+{% extends "template_generico.html" %}
+
+{% block content %}
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3" style="padding-top: 25px;">
+  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-2 py-2">
+      <h2 class="display-5">TAVOLO</h2>
+    </div>
+    <div class="bg-light shadow-sm mx-auto text-dark pre-scrollable" style="width: 90%; height: 450px; border-radius: 21px 21px 0 0;">
+      {% if spec_tav %}
+        <ul class="list-group">
+          {% for spec in spec_tav %}
+            <li class="border-bottom">
+              {{spec.prodotto}}
+              <span class="badge badge-light">{{spec.prodotto.prezzo_vendita}} € </span>
+              <a href="{% url 'deleteProdotto' pk=spec.pk tav=numTav %}">
+                <button class="btn btn-danger btn-sm">ELIMINA</button>
+              </a>
+            </li>
+
+          {% endfor %}
+        </ul>
+      {% else %}
+        <h3>TAVOLO LIBERO</h3>
+      {% endif %}
+    </div>
+  </div>
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-2 p-2">
+      <h2 class="display-5">ARTICOLI</h2>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto text-white pre-scrollable" style="width: 90%; height: 450px; border-radius: 21px 21px 0 0;">
+      <ul class="list-group">
+        {% for prod in prodotti %}
+          <li class="border-bottom">
+            <a href="{% url 'insertProdotto' pk=prod.pk tav=numTav %}">
+              {{prod.descrizione_breve}}
+              <span class="badge badge-light">{{prod.prezzo_vendita}} €</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3" style="padding-top: 25px;">
+  <a href="{% url 'deleteAll' tav=numTav %}">
+  <button type="button" class="btn bg-danger text-white">
+    ELIMINA TUTTO
+  </button>
+  </a>
+  <button type="button" class="btn bg-dark text-white" data-toggle="modal" data-target="#exampleModalLong">
+    MODALITA' PAGAMENTO
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModalLong">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Scegli la modalità di pagamento: </h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <svg class="icon">
+              <use xlink:href="/bootstrap-italia/dist/svg/sprite.svg#it-close"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>TOTALE: <h2>{{conto}}</h2></p>
+      </div>
+      <div class="modal-footer">
+        <!--Questi due tasti devono eseguire un'insert nel DB per il salvataggio dello scontrino
+        quello CONTANTI dovrebbe far uscire lo scontrino-->
+        <button class="btn btn-outline-dark btn-sm" type="button">POS</button>
+        <button class="btn btn-dark btn-sm" type="button">CONTANTI</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
