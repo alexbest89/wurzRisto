@@ -80,8 +80,8 @@
       <div class="modal-footer">
         <!--Questi due tasti devono eseguire un'insert nel DB per il salvataggio dello scontrino
         quello CONTANTI dovrebbe far uscire lo scontrino-->
-        <button class="btn btn-outline-dark btn-sm" type="button">POS</button>
-        <button class="btn btn-dark btn-sm" type="button">CONTANTI</button>
+        <button class="btn btn-outline-dark btn-sm" type="button"><a href="{% url 'scontrinoo' tav=numTav tipoPag='pos' %}">POS</a></button>
+        <button class="btn btn-dark btn-sm" type="button"><a href="{% url 'scontrinoo' tav=numTav tipoPag='contanti' %}">CONTANTI</a></button>
       </div>
     </div>
   </div>

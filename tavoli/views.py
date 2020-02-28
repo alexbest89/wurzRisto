@@ -3,7 +3,7 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from tavoli.models import Tavoli, Fornitore, Cameriere, Prodotti, Spec_Tav
+from tavoli.models import Tavoli, Fornitore, Cameriere, Prodotti, Spec_Tav, Scontrino, Spec_Scon, Azzeramenti
 
 
 def index(request):
@@ -48,7 +48,43 @@ class Conto_Tavolo():
         return HttpResponseRedirect('/tavoli/' + str(tav))
 
     def deleteAll(request, tav):
-        del_articles = Spec_Tav.objects.all()
+        del_articles = Spec_Tav.objects.filter(tavolo=tav)
         del_articles.delete()
 
         return HttpResponseRedirect('/tavoli/' + str(tav))
+
+    def scontrino(request, tav, tipoPag):
+
+        ult_scon = Scontrino.objects.last()
+        azz = Azzeramenti.objects.last()
+
+        spec_tav = Spec_Tav.objects.filter(tavolo=tav)
+        conto = 0
+        for spec in spec_tav:
+            conto = conto + spec.prodotto.prezzo_vendita
+
+        num_azz = 1
+        num_scont = 1
+
+        if ult_scon is not None:
+            if azz is not None:
+                if azz.num_azz == ult_scon.num_azz:
+                    num_azz = azz.num_azz + 1
+                    num_scont = 1
+            else:
+                num_azz = ult_scon.num_azz
+                num_scont = ult_scon.num_azz + 1
+
+        nuovo_scontr = Scontrino(num_azz=num_azz, num_scon=num_scont, tot=conto, tipo_pag=tipoPag)
+        nuovo_scontr.save()
+
+        ult_scon = Scontrino.objects.last()
+
+        for spec in spec_tav:
+            print(spec.prodotto)
+            new_spec_scontr = Spec_Scon(id_scon=ult_scon, id_prodotto=spec.prodotto)
+            new_spec_scontr.save()
+
+        Conto_Tavolo.deleteAll(request, tav)
+
+        return HttpResponseRedirect('/tavoli')

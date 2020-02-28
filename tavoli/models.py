@@ -106,8 +106,26 @@ class Spec_Tav(models.Model):
     tavolo = models.ForeignKey('Tavoli', on_delete=models.CASCADE)
     prodotto = models.ForeignKey('Prodotti', on_delete=models.CASCADE)
     cameriere = models.ForeignKey('Cameriere', on_delete=models.CASCADE)
-    created_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def get_absolute_url(self):
         """Returns the url to access a particular instance of the model."""
         return reverse('model-detail-view', args=[str(self.id)])
+
+
+class Scontrino(models.Model):
+    num_azz = models.IntegerField()
+    num_scon = models.IntegerField()
+    tipo_pag = models.CharField(max_length=20, default="pagamento")
+    tot = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField( auto_now_add = True)
+
+
+class Spec_Scon(models.Model):
+    id_scon = models.ForeignKey('Scontrino', on_delete=models.CASCADE)
+    id_prodotto = models.ForeignKey('Prodotti', on_delete=models.CASCADE)
+
+
+class Azzeramenti(models.Model):
+    num_azz = models.IntegerField(unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)

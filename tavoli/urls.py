@@ -7,4 +7,5 @@ urlpatterns = [
     path('insert/<int:pk>/<int:tav>', views.Conto_Tavolo.insert, name='insertProdotto'),
     path('delete/<int:pk>/<int:tav>', views.Conto_Tavolo.delete, name='deleteProdotto'),
     path('deleteAll/<int:tav>', views.Conto_Tavolo.deleteAll, name='deleteAll'),
+    path('scontrino/<int:tav>/<str:tipoPag>', views.Conto_Tavolo.scontrino, name='scontrinoo'),
 ]
