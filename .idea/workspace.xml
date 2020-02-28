@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c83424b-781b-4e8f-899c-0fd3b72d3a53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tavoli/static/js/myJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tavoli/templates/tavoli_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/tavoli/templates/tavoli_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tavoli/templates/template_generico.html" beforeDir="false" afterPath="$PROJECT_DIR$/tavoli/templates/template_generico.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,22 +71,30 @@
       <option name="project" value="LOCAL" />
       <updated>1582658833465</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Aggiunta ricerca lista articoli con funzione javascript">
+      <created>1582659880298</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582659880298</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test" />
+    <MESSAGE value="Aggiunta ricerca lista articoli con funzione javascript" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta ricerca lista articoli con funzione javascript" />
   </component>
   <component name="WindowStateProjectService">
     <state x="319" y="130" key="#Notifications" timestamp="1582484911489">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
     <state x="319" y="130" key="#Notifications/0.23.1440.828@0.23.1440.828" timestamp="1582484911489" />
-    <state x="364" y="54" key="CommitChangelistDialog2" timestamp="1582658833127">
+    <state x="364" y="54" key="CommitChangelistDialog2" timestamp="1582659880111">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
-    <state x="364" y="54" key="CommitChangelistDialog2/0.23.1440.826@0.23.1440.826" timestamp="1582658833127" />
+    <state x="364" y="54" key="CommitChangelistDialog2/0.23.1440.826@0.23.1440.826" timestamp="1582659880111" />
     <state x="212" y="82" key="SettingsEditor" timestamp="1581783687185">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
@@ -97,10 +103,11 @@
       <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.814@0.23.1440.814" timestamp="1582144961239" />
-    <state x="319" y="205" key="Vcs.Push.Dialog.v2" timestamp="1582658843911">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state x="319" y="202" key="Vcs.Push.Dialog.v2" timestamp="1582915423198">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
-    <state x="319" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.826@0.23.1440.826" timestamp="1582658843911" />
+    <state x="319" y="202" key="Vcs.Push.Dialog.v2/0.23.1440.814@0.23.1440.814" timestamp="1582915423198" />
+    <state x="319" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.826@0.23.1440.826" timestamp="1582659891868" />
     <state x="319" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.828@0.23.1440.828" timestamp="1582485038256" />
     <state x="396" y="275" key="com.intellij.ide.util.TipDialog" timestamp="1581785776424">
       <screen x="0" y="23" width="1440" height="814" />
