@@ -1,0 +1,9 @@
+{% extends "template_generico.html" %}
+
+{% block content %}
+    <h1>Nuovo Tavolo</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ table.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

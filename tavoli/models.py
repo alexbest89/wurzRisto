@@ -120,12 +120,27 @@ class Scontrino(models.Model):
     tot = models.DecimalField(max_digits=10, decimal_places=2)
     created_at = models.DateTimeField( auto_now_add = True)
 
+    def __str__(self):
+        return self.num_scon
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular instance of the model."""
+        return reverse('model-detail-view', args=[str(self.id)])
+
 
 class Spec_Scon(models.Model):
     id_scon = models.ForeignKey('Scontrino', on_delete=models.CASCADE)
     id_prodotto = models.ForeignKey('Prodotti', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.id_scon
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular instance of the model."""
+        return reverse('model-detail-view', args=[str(self.id)])
+
 
 class Azzeramenti(models.Model):
     num_azz = models.IntegerField(unique=True)
+    tot_giornaliero = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     created_at = models.DateTimeField(auto_now_add=True)

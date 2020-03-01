@@ -50,6 +50,32 @@
   </nav>
 
   {% block content %}{% endblock %}
+{% block pagination %}
+  {% if is_paginated %}
+  <div class="container">
+    <div class="pagination">
+      <ul class="pagination">
+        <span class="page-links">
+          <li class="page-item">
+            {% if page_obj.has_previous %}
+              <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">Indietro</a>
+            {% endif %}
+          </li>
+          <li class="page-item">
+            <span class="page-current">
+              <p>Pagina {{ page_obj.number }} di {{ page_obj.paginator.num_pages }}.</p>
+            </span>
+          </li>
+          <li class="page-item">
+            {% if page_obj.has_next %}
+              <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">Avanti</a>
+            {% endif %}
+          </li>
+        </span>
+    </div>
+  </div>
+  {% endif %}
+{% endblock %}
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>

@@ -1,9 +1,10 @@
 import datetime
 
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from tavoli.models import Tavoli, Fornitore, Cameriere, Prodotti, Spec_Tav, Scontrino, Spec_Scon, Azzeramenti
+from .form import TavoliForm
 
 
 def index(request):
@@ -14,6 +15,20 @@ def index(request):
 
 class TavoliListView(generic.ListView):
     model = Tavoli
+    paginate_by = 10
+
+
+def table_new(request):
+    if request.method == "POST":
+        table = TavoliForm(request.POST)
+        if table.is_valid():
+            tablee = table.save(commit=False)
+            tablee.save()
+            return HttpResponseRedirect('/tavoli')
+    else:
+        table = TavoliForm()
+
+    return render(request, 'tavoli/tavolo_form.html', {'table': table})
 
 
 class Conto_Tavolo():

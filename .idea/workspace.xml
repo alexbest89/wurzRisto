@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c83424b-781b-4e8f-899c-0fd3b72d3a53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tavoli/migrations/0006_scontrino_spec_scon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tavoli/migrations/0007_scontrino_tipo_pag.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tavoli/migrations/0008_auto_20200228_1957.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tavoli/migrations/0009_auto_20200228_2012.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tavoli/migrations/0010_auto_20200228_2023.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tavoli/migrations/0011_auto_20200228_2034.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tavoli/form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tavoli/migrations/0012_azzeramenti_tot_giornaliero.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tavoli/templates/tavoli/tavolo_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tavoli/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tavoli/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tavoli/templates/tavoli/tavoli_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/tavoli/templates/tavoli/tavoli_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tavoli/templates/tavoli_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/tavoli/templates/tavoli_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tavoli/templates/template_generico.html" beforeDir="false" afterPath="$PROJECT_DIR$/tavoli/templates/template_generico.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tavoli/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tavoli/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tavoli/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tavoli/views.py" afterDir="false" />
     </list>
@@ -97,24 +97,32 @@
       <option name="project" value="LOCAL" />
       <updated>1582915431228</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Aggiunta funzione sotto i tasti di pagamento con salvataggio dello scontrino nelle tabelle">
+      <created>1582922700497</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582922700497</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Test" />
     <MESSAGE value="Aggiunta ricerca lista articoli con funzione javascript" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta ricerca lista articoli con funzione javascript" />
+    <MESSAGE value="Aggiunta funzione sotto i tasti di pagamento con salvataggio dello scontrino nelle tabelle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta funzione sotto i tasti di pagamento con salvataggio dello scontrino nelle tabelle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="319" y="130" key="#Notifications" timestamp="1582484911489">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
     <state x="319" y="130" key="#Notifications/0.23.1440.828@0.23.1440.828" timestamp="1582484911489" />
-    <state x="364" y="42" key="CommitChangelistDialog2" timestamp="1582915430965">
+    <state x="364" y="42" key="CommitChangelistDialog2" timestamp="1582922700216">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
-    <state x="364" y="42" key="CommitChangelistDialog2/0.23.1440.814@0.23.1440.814" timestamp="1582915430965" />
+    <state x="364" y="42" key="CommitChangelistDialog2/0.23.1440.814@0.23.1440.814" timestamp="1582922700216" />
     <state x="364" y="54" key="CommitChangelistDialog2/0.23.1440.826@0.23.1440.826" timestamp="1582659880111" />
     <state x="212" y="82" key="SettingsEditor" timestamp="1581783687185">
       <screen x="0" y="23" width="1440" height="814" />
@@ -124,16 +132,16 @@
       <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.814@0.23.1440.814" timestamp="1582144961239" />
-    <state x="319" y="202" key="Vcs.Push.Dialog.v2" timestamp="1582915443343">
+    <state x="319" y="202" key="Vcs.Push.Dialog.v2" timestamp="1582922714401">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
-    <state x="319" y="202" key="Vcs.Push.Dialog.v2/0.23.1440.814@0.23.1440.814" timestamp="1582915443343" />
+    <state x="319" y="202" key="Vcs.Push.Dialog.v2/0.23.1440.814@0.23.1440.814" timestamp="1582922714401" />
     <state x="319" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.826@0.23.1440.826" timestamp="1582659891868" />
     <state x="319" y="205" key="Vcs.Push.Dialog.v2/0.23.1440.828@0.23.1440.828" timestamp="1582485038256" />
-    <state x="396" y="275" key="com.intellij.ide.util.TipDialog" timestamp="1581785776424">
+    <state x="396" y="275" key="com.intellij.ide.util.TipDialog" timestamp="1583086485821">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
-    <state x="396" y="275" key="com.intellij.ide.util.TipDialog/0.23.1440.814@0.23.1440.814" timestamp="1581785776424" />
+    <state x="396" y="275" key="com.intellij.ide.util.TipDialog/0.23.1440.814@0.23.1440.814" timestamp="1583086485821" />
     <state x="368" y="161" width="670" height="676" key="search.everywhere.popup" timestamp="1581795864375">
       <screen x="0" y="23" width="1440" height="814" />
     </state>

@@ -22,7 +22,7 @@
     <div class="my-2 py-2">
       <h2 class="display-5">TAVOLO</h2>
     </div>
-    <div class="bg-light shadow-sm mx-auto text-dark pre-scrollable" style="width: 90%; height: 450px; border-radius: 21px 21px 0 0;">
+    <div class="shadow-sm mx-auto pre-scrollable" style="width: 90%; height: 450px; border-radius: 21px 21px 0 0;">
       {% if spec_tav %}
         <ul class="list-group">
           {% for spec in spec_tav %}
@@ -45,7 +45,7 @@
     <div class="my-2 p-2">
       <h2 class="display-5">ARTICOLI</h2>
     </div>
-    <div class="bg-dark shadow-sm mx-auto text-white pre-scrollable" style="width: 90%; height: 450px; border-radius: 21px 21px 0 0;">
+    <div class="shadow-sm mx-auto text-white pre-scrollable" style="width: 90%; height: 450px; border-radius: 21px 21px 0 0;">
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cerca">
       <ul class="list-group" id="myUL">
         {% for prod in prodotti %}
